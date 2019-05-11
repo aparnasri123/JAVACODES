@@ -1,0 +1,14 @@
+com\eshopping\model\Product.class
+com\eshopping\model\UserDetail.class
+com\eshopping\dao\ProductDAOImpl.class
+com\eshopping\dao\UserDetailDAO.class
+com\eshopping\dao\UserDetailImpl.class
+com\eshopping\dao\SupplierDAO.class
+com\eshopping\model\Supplier.class
+com\eshopping\dao\CategoryDAOImpl.class
+com\eshopping\dao\ProductDAO.class
+com\eshopping\ShoppingBazaarBackend\App.class
+com\eshopping\dao\SupplierDAOImpl.class
+com\eshopping\config\DBConfig.class
+com\eshopping\dao\CategoryDAO.class
+com\eshopping\model\Category.class
