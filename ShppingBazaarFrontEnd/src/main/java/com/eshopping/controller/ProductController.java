@@ -84,7 +84,7 @@ public class ProductController {
 	{
 		productDAO.addProduct(product);
 		
-		String path="E:\\Aparna-workspace\\ShppingBazaarFrontEnd\\src\\main\\webapp\\resources\\images";
+		String path="E:\\Aparna-workspace\\ShppingBazaarFrontEnd\\src\\main\\webapp\\resources\\images\\";
 		path=path+String.valueOf(product.getProductId())+".jpg";
 		File imageFile=new File(path);
 		

@@ -1,9 +1,14 @@
 package com.eshopping.model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table
@@ -11,34 +16,67 @@ public class Product {
 	
 	@Id
 	@GeneratedValue
+	private int productId;
+	private String productName;
+	private String productDesc;
+	private int stock;
+	private int price;
+	private int CategoryId;
+	private int SupplierId;
 	
-	private int ProductId;
-	private String ProductName;
-	private String ProductDesc;
+	@Transient
+	MultipartFile pimage;
 	
-	public int getProductId() 
+	public MultipartFile getPimage()
 	{
-		return ProductId;
+		return pimage;
 	}
-	public void setProductId(int productId) 
-	{
-		ProductId = productId;
+	public void setPimage(MultipartFile pimage)
+	{	
+		this.pimage=pimage;
 	}
-	public String getProductName() 
-	{
-		return ProductName;
+	
+	public int getProductId() {
+		return productId;
 	}
-	public void setProductName(String productName) 
-	{
-		ProductName = productName;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
-	public String getProductDesc() 
-	{
-		return ProductDesc;
+	public String getProductName() {
+		return productName;
 	}
-	public void setProductDesc(String productDesc) 
-	{
-		ProductDesc = productDesc;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-
+	public String getProductDesc() {
+		return productDesc;
+	}
+	public void setProductDesc(String productDesc) {
+		this.productDesc = productDesc;
+	}
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getCategoryId() {
+		return CategoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		CategoryId = categoryId;
+	}
+	public int getSupplierId() {
+		return SupplierId;
+	}
+	public void setSupplierId(int supplierId) {
+		SupplierId = supplierId;
+	}
+	
 }

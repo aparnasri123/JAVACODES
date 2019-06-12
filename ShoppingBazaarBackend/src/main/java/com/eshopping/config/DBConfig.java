@@ -16,12 +16,11 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.eshopping.dao.CategoryDAOImpl;
+import com.eshopping.model.Cart;
 import com.eshopping.model.Category;
 import com.eshopping.model.Product;
 import com.eshopping.model.Supplier;
 import com.eshopping.model.UserDetail;
-
-
 
 @Configuration
 @EnableTransactionManagement
@@ -53,12 +52,12 @@ public SessionFactory getSessionFactory()
 	
 	LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(dataSource);
 	factory.addProperties(properties);
-	
 	factory.addAnnotatedClass(Category.class);
 	factory.addAnnotatedClass(Supplier.class);
 	factory.addAnnotatedClass(Product.class);
 	factory.addAnnotatedClass(UserDetail.class);
-	
+	factory.addAnnotatedClass(Cart.class);
+
 	System.out.println("---Session Factory Object is created---");
 	SessionFactory sessionFactory=factory.buildSessionFactory();
 	return sessionFactory;
@@ -70,8 +69,8 @@ public HibernateTransactionManager getTransactionManager(SessionFactory sessionF
 	System.out.println("---Transaction Manager Object is Created ---");
 	return new HibernateTransactionManager(sessionFactory);
 }
-//@Bean("categoryDAO")
-//public CategoryDAOImpl getCategoryDAO()
+//@Bean("CategoryDAO")
+ //public CategoryDAOImpl getCategoryDAO()
 //{
 	//return new CategoryDAOImpl();
 //}

@@ -25,7 +25,8 @@ public class SupplierDAOTest {
 		
 		supplierDAO=(SupplierDAO)context.getBean("supplierDAO");
 	}
-    @Ignore
+    
+	@Ignore
 	@Test
 	public void addSupplierTest() {
 		
@@ -42,12 +43,13 @@ public class SupplierDAOTest {
 	public void addSupplierTest1() {
 		
 		Supplier supplier=new Supplier();
-		supplier.setSupplierName("Akshay");
-		supplier.setSupplierDesc("Marketing Head of Branded Products");
+		supplier.setSupplierName("Praveen Kumar");
+    	supplier.setSupplierDesc("Marketing Head of Branded Products");
 		
 		assertTrue("problem in adding supplier",supplierDAO.addSupplier(supplier));
 		
 	}
+    
 	@Ignore
 	@Test
 	public void addSupplierTest2() 
@@ -62,9 +64,11 @@ public class SupplierDAOTest {
 	@Test
 	public void deleteSupplierTest() 
 	{
-		Supplier supplier=supplierDAO.getSupplier(7);
+		Supplier supplier=supplierDAO.getSupplier(45);
 		assertTrue("problem in adding supplier",supplierDAO.deleteSupplier(supplier));
 	}
+	
+	@Ignore
      @Test
      public void updateSupplierTest()
      {
@@ -74,6 +78,7 @@ public class SupplierDAOTest {
         assertTrue("problem in adding supplier",supplierDAO.updateSupplier(supplier));
         
      }
+     
      @Test
      public void listSupplierTest() 
      {

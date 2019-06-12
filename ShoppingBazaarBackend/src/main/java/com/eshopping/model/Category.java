@@ -12,7 +12,6 @@ public class Category {
 	
 	@Id
 	@GeneratedValue
-	
 	int CategoryId;
 	String CategoryName;
 	String CategoryDesc;

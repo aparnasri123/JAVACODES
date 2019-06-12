@@ -4,6 +4,7 @@
 <html>
 <head>
 <title>Home Page</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -18,15 +19,21 @@ background-color:A0D6FC !important;
 .nav-link{
   color:471A94 !important;
   }
+ .nav > li  > .nav-link
+{
+    padding-left:4px;
+    padding-right:4px;
+    font-size:15px;
+}
 </style>
 </head>
 <body>
-<nav class="nav navbar-default">
-<div class="container-fluid">
+<div class="container">
    <div class="navbar-header">
-      <a class="navbar-brand" href="#">ShoppingBazaarFrontEnd</a>
-<ul class="nav nav-tabs">
-  <li class="nav-item">
+      <a class="navbar-brand" href="#">CoolCubes</a>
+      </div>
+  <ul class="nav nav-tabs">
+  <li>
     <a class="nav-link active" href="index.jsp">Home</a>
   </li>
   <li>
@@ -47,13 +54,8 @@ background-color:A0D6FC !important;
   <li>
   <a class="nav-link" href="productPage">Products</a>
   </li>
-  <li>
-  <a class="nav-link" href="totalProductDisplay">ProductDisplay</a>
-  </li>
-</ul>
+ </ul>
 </div>
-</div>
-</nav>
 </body>
 </html>
 

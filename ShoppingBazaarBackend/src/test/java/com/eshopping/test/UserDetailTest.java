@@ -1,6 +1,6 @@
 package com.eshopping.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -32,8 +32,11 @@ public class UserDetailTest {
 	{
 		UserDetail userDetail=new UserDetail();
 		userDetail.setUserName("Aparna");
+		userDetail.setPassword("ABC@123");
 		userDetail.setUserAddress("Chennai");
 		userDetail.setUserEmail("aparna@gmail.com");
+		userDetail.setUserRole("User");
+		
 		assertTrue("problem in adding userdetail", userDetailDAO.addUserDetail(userDetail));
 	}
 	
@@ -43,18 +46,25 @@ public class UserDetailTest {
 	{
 		UserDetail userDetail=new UserDetail();
 		userDetail.setUserName("Basha");
+		userDetail.setPassword("bashadon@001");
 		userDetail.setUserAddress("Mumbai");
 		userDetail.setUserEmail("basha@yahoo.com");
+		userDetail.setUserRole("User");
+		
 		assertTrue("problem in adding userdetail", userDetailDAO.addUserDetail(userDetail));
 	}
+	
 	@Ignore
 	@Test
 	public void addUserDetailTest2()
 	{
 		UserDetail userDetail=new UserDetail();
-		userDetail.setUserName("Cathy");
-		userDetail.setUserAddress("Boston");
-		userDetail.setUserEmail("cathy@live.com");
+		userDetail.setUserName("Admin");
+		userDetail.setPassword("admin@123$");
+		userDetail.setUserAddress("Bengaluru");
+		userDetail.setUserEmail("admin@gmail.com");
+		userDetail.setUserRole("Admin");
+		
 		assertTrue("problem in adding userdetail", userDetailDAO.addUserDetail(userDetail));
 	}
 	
@@ -62,7 +72,7 @@ public class UserDetailTest {
 	@Test 
 	public void deleteUserDetailTest()
 	{
-		UserDetail userDetail= userDetailDAO.getUserDetail("Cathy");
+		UserDetail userDetail= userDetailDAO.getUserDetail("Basha");
 		assertTrue("problem in deleting the userdetail",userDetailDAO.deleteUserDetail(userDetail));
 	}
 	
@@ -75,6 +85,7 @@ public class UserDetailTest {
 		assertTrue("problem in updating the userdetails", userDetailDAO.updateUserDetail(userDetail));
 	}
 	
+    
 	@Test
 	public void userDetailListTest()
 	{
@@ -83,8 +94,10 @@ public class UserDetailTest {
 		for(UserDetail userDetail:userDetailList)
 		{
 			System.out.print(userDetail.getUserName()+"\t");
+			System.out.print(userDetail.getPassword()+"\t");
 			System.out.print(userDetail.getUserAddress()+"\t");
-			System.out.println(userDetail.getUserEmail()+"\t");
+			System.out.print(userDetail.getUserEmail()+"\t");
+			System.out.println(userDetail.getUserRole()+"\t");
 			
 		}
 		

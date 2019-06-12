@@ -26,16 +26,15 @@ public class CategoryDAOTest
 		
 		categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
 	}
-	@Ignore
+	
 	@Test
 	public void addCategoryTest()
 	{
 		Category category=new Category();
-		category.setCategoryName("Test");
-		category.setCategoryDesc("testing");
+		category.setCategoryName("Saree");
+		category.setCategoryDesc("Pure Silk and Silk-Cotton mix sarees");
 		
 		assertTrue("problem in adding category",categoryDAO.addCategory(category));
-		
 	}
     @Ignore
 	@Test
@@ -49,9 +48,54 @@ public class CategoryDAOTest
 		
 	}
     
+    @Ignore
+    @Test
+    public void addCategoryTest2() 
+    {
+        Category category=new Category();
+        category.setCategoryName("Lehanga");
+        category.setCategoryDesc("Party wear and wedding wear collections");
+    	
+        assertTrue("problem in adding category",categoryDAO.addCategory(category));
+    }
+    
+    @Ignore
+    @Test
+    public void addCategoryTest3() 
+    {
+        Category category=new Category();
+        category.setCategoryName("Masthani");
+        category.setCategoryDesc("Kids party wear collections");
+    	
+        assertTrue("problem in adding category",categoryDAO.addCategory(category));
+    }
+    
+    @Ignore
+    @Test
+    public void addCategoryTest4() 
+    {
+        Category category=new Category();
+        category.setCategoryName("T-Shirt");
+        category.setCategoryDesc("Round neck all colors cotton t-shirts with modern printed art design");
+    	
+        assertTrue("problem in adding category",categoryDAO.addCategory(category));
+    }
+    @Ignore
+    @Test
+    public void addCategoryTest5() 
+    {
+        Category category=new Category();
+        category.setCategoryName("Pants");
+        category.setCategoryDesc("Casual and Jeans materails");
+    	
+        assertTrue("problem in adding category",categoryDAO.addCategory(category));
+    }
+    
+    
+    @Ignore                                                            
     @Test
     public void deleteCategoryTest() {
-    	Category category=categoryDAO.getCategory(17);
+    	Category category=categoryDAO.getCategory(19);
     	assertTrue("problem in deleting category",categoryDAO.deleteCategory(category));
     	
     }
@@ -62,6 +106,7 @@ public class CategoryDAOTest
     	category.setCategoryDesc("Testing category");
     	assertTrue("problem in updating category",categoryDAO.updateCategory(category));
     }
+    
     
      @Test
      public void listCategoryTest()

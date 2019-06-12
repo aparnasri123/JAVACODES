@@ -11,14 +11,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.eshopping.model.Product;
 
+
 @Repository("productDAO")
 @Transactional
 public class ProductDAOImpl implements ProductDAO
 {
-    @Autowired
+    
+	
+	@Autowired
     SessionFactory sessionFactory;
-	
-	
+
+
 	@Override
 	public boolean addProduct(Product product) {
 		
@@ -75,5 +78,4 @@ public class ProductDAOImpl implements ProductDAO
 		session.close();
 		return productList;
 	}
-
 }

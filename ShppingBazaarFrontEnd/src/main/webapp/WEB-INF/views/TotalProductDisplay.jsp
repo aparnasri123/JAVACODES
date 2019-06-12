@@ -4,22 +4,15 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container-fluid">
 <div  class="content-wrapper">
-<div class="col-xs-1 text-center">
-<section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">MY CART</h1>
+        <h2>MY CART</h2>
      </div>
-</section>
-
 <div class="col-md-12">
  <div class="product col-md-3 service-image-left">
- <form action="<c:url value="/addcart/${productId}"/>" method="post">
- <center>
-   <img id="item-display" src="<c:url value="/resources/images/${product.productId}.jpg"/>" alt="image">
- </center>
- 
- </form>
+ <form action="<c:url value="/addToCart/${productId}"/>" method="post">
+   <img id="item-display" class="img-thumbnail" width="400" height="200" src="<c:url value="/resources/images/${product.productId}.jpg"/>" alt="image">
  </div>
+ <div class="product col-md-3 service-text-center">
 <div class="product-title">${product.productName}</div>
 <br/>
 <div class="product-desc">${product.productDesc}</div>
@@ -35,6 +28,7 @@
    <option value="4">4</option>
    </select>
 </div>
+</div>
 <hr>
 <div class="btn-group cart">
 <input type="submit" class="btn btn-success" value="Add To Cart"/>
@@ -45,5 +39,5 @@
 </div>
 </div>
 </div>
-</div>
+ </form>
 

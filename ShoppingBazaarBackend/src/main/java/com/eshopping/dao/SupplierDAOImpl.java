@@ -71,7 +71,6 @@ public class SupplierDAOImpl implements SupplierDAO
 		List<Supplier> supplierList =query.list();
 		session.close();
 		return supplierList;
-		
 	}
 
 }
